@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="newGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="centerContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="centerContainer"]
+margin_left = 865.0
+margin_top = 505.0
+margin_right = 1055.0
+margin_bottom = 575.0
+
+[node name="label" type="Label" parent="centerContainer/vBoxContainer"]
+margin_right = 190.0
+margin_bottom = 25.0
+text = "New Game Scene"
+
+[node name="button" type="Button" parent="centerContainer/vBoxContainer"]
+margin_top = 33.0
+margin_right = 190.0
+margin_bottom = 70.0
+text = "Back"

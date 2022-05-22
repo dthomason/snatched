@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://mandella_museum/tileMaps/museum_sheet.tres" type="TileSet" id=1]
+[ext_resource path="res://players/seeker/seeker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mandella_museum/sprites/lights/circle_05.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("canvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.121569, 0.109804, 0.109804, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "alert"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("canvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.3, 5 ),
+"transitions": PoolRealArray( 3.03143, 0.574349, 2.46229 ),
+"update": 0,
+"values": [ Color( 0.0470588, 0.0470588, 0.0470588, 1 ), Color( 0.388235, 0.227451, 0.227451, 1 ), Color( 0.0470588, 0.0470588, 0.0470588, 1 ) ]
+}
+
+[node name="main" type="Node2D"]
+position = Vector2( -32, 64 )
+
+[node name="floor" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 48, 48 )
+show_collision = true
+collision_layer = 16
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 63, 2, 0, 69, 2, 0, 75, 2, 0, 81, 2, 0, 87, 2, 0, 93, 2, 0, 65579, 30, 0, 131115, 30, 0, 196651, 30, 0, 262187, 30, 0, 327681, 9, 0, 327683, 9, 0, 327685, 9, 0, 327687, 9, 0, 327689, 9, 0, 327691, 9, 0, 327693, 9, 0, 327695, 9, 0, 327697, 9, 0, 327699, 9, 0, 327701, 9, 0, 327703, 9, 0, 327723, 30, 0, 393259, 30, 0, 393279, 2, 0, 393285, 2, 0, 393291, 2, 0, 393297, 2, 0, 393303, 2, 0, 393309, 2, 0, 458753, 7, 0, 458759, 7, 0, 458765, 7, 0, 458771, 7, 0, 458777, 7, 0, 458783, 7, 0, 458789, 9, 0, 458791, 1, 0, 458797, 1, 0, 458803, 1, 0, 458809, 1, 0, 589861, 9, 0, 589867, 30, 0, 720933, 9, 0, 786495, 2, 0, 786501, 2, 0, 786507, 2, 0, 786513, 2, 0, 786519, 2, 0, 786525, 2, 0, 851969, 7, 0, 851975, 7, 0, 851981, 7, 0, 851987, 7, 0, 851993, 7, 0, 851999, 7, 0, 852005, 9, 0, 983077, 9, 0, 1114149, 9, 0 )
+
+[node name="boundaries" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 48, 48 )
+show_collision = true
+collision_layer = 16
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -131071, 29, 327680, -131070, 29, 458756, -131069, 29, 458756, -131068, 29, 458756, -131067, 29, 458756, -131066, 29, 327681, -131065, 29, 458753, -131064, 29, 458753, -131063, 29, 458756, -131062, 29, 458753, -131061, 29, 458756, -131060, 29, 458753, -131059, 29, 327681, -131058, 29, 327681, -131057, 29, 327681, -131056, 29, 327681, -131055, 29, 327681, -131054, 29, 458753, -131053, 29, 458753, -131052, 29, 458753, -131051, 29, 458756, -131050, 29, 458753, -131049, 29, 458756, -131048, 29, 458756, -131047, 29, 327682, -65535, 29, 458755, -65511, 29, 458755, 1, 29, 393218, 25, 29, 458752, 26, 29, 327681, 27, 29, 327681, 28, 29, 327681, 29, 29, 458753, 30, 29, 327681, 31, 29, 458753, 32, 29, 327681, 33, 29, 458753, 34, 29, 327681, 35, 29, 458753, 36, 29, 327681, 37, 29, 458753, 38, 29, 327681, 39, 29, 327681, 40, 29, 458753, 41, 29, 458756, 42, 29, 327681, 43, 29, 327681, 44, 29, 458756, 45, 29, 458756, 46, 29, 458753, 47, 29, 458756, 48, 29, 458753, 49, 29, 458753, 50, 29, 327681, 51, 29, 458756, 52, 29, 458756, 53, 29, 327681, 54, 29, 458753, 55, 29, 458753, 56, 29, 458753, 57, 29, 458753, 58, 29, 327681, 59, 29, 458756, 60, 29, 458756, 61, 29, 327681, 62, 29, 327682, 65537, 29, 393218, 65538, 19, 0, 65540, 13, 0, 65543, 14, 0, 65546, 12, 0, 65549, 13, 0, 65552, 14, 0, 65555, 12, 0, 65558, 18, 0, 65598, 29, 393219, 131073, 29, 393218, 196609, 29, 458755, 196632, 16, 0, 262145, 29, 458755, 262171, 20, 0, 262177, 20, 0, 327681, 29, 393218, 393217, 29, 393216, 393240, 29, 131074, 458753, 29, 458755, 524289, 29, 393218, 589825, 29, 393216, 655361, 29, 393216, 720897, 29, 393216, 786433, 29, 393216, 851969, 29, 393218, 852006, 29, 327683, 917505, 29, 393216, 917542, 29, 393216, 983041, 29, 458755, 983078, 29, 393218, 983102, -1073741795, 131074, 1048577, 29, 393218, 1048614, 29, 393218, 1048615, 25, 0, 1048621, 25, 0, 1048627, 25, 0, 1048633, 25, 0, 1114113, 29, 458755, 1114150, 29, 393216, 1179649, 29, 458755, 1179686, 29, 393218, 1245185, 29, 458752, 1245186, 29, 458756, 1245187, 29, 327681, 1245188, 29, 327681, 1245189, 29, 327681, 1245190, 29, 458756, 1245191, 29, 458756, 1245192, 29, 458753, 1245193, 29, 327681, 1245194, 29, 327681, 1245195, 29, 458756, 1245196, 29, 458756, 1245197, 29, 327681, 1245198, 29, 458756, 1245199, 29, 458756, 1245200, 29, 458756, 1245201, 29, 458756, 1245202, 29, 327681, 1245203, 29, 458753, 1245204, 29, 458756, 1245205, 29, 327681, 1245206, 29, 458756, 1245207, 29, 458756, 1245208, 29, 327681, 1245209, 29, 458756, 1245210, 29, 458753, 1245211, 29, 458753, 1245212, 29, 458753, 1245213, 29, 458753, 1245214, 29, 458753, 1245215, 29, 458756, 1245216, 29, 327681, 1245217, 29, 458753, 1245218, 29, 458756, 1245219, 29, 458756, 1245220, 29, 458756, 1245221, 29, 458753, 1245222, 29, 262152, 1310758, 29, 393218, 1376294, 29, 393218, 1441830, 29, 393216, 1441831, 25, 0, 1441837, 25, 0, 1441843, 25, 0, 1441849, 25, 0, 1507366, 29, 458755, 1572902, 29, 393219, 1835047, 25, 0, 1835053, 25, 0, 1835059, 25, 0, 1835065, 25, 0 )
+
+[node name="ySort" type="YSort" parent="."]
+
+[node name="walls" type="TileMap" parent="ySort"]
+show_behind_parent = true
+position = Vector2( 0, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 48, 48 )
+cell_tile_origin = 1
+show_collision = true
+collision_layer = 16
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -65534, 19, 0, -65532, 12, 0, -65529, 12, 0, -65526, 12, 0, -65523, 12, 0, -65520, 12, 0, -65517, 12, 0, -65514, 18, 0, 65560, 16, 0, 131074, 19, 0, 131076, 13, 0, 131079, 14, 0, 131082, 11, 0, 131085, 13, 0, 131088, 14, 0, 131091, 11, 0, 131094, 18, 0, 131099, 12, 0, 131102, 15, 0, 131108, 12, 0, 131111, 10, 0, 131123, 10, 0, 262168, 16, 0, 327707, 20, 0, 327713, 20, 0, 327719, 10, 0, 327731, 10, 0, 852007, 10, 0, 852019, 10, 0 )
+
+[node name="seeker" parent="ySort" instance=ExtResource( 2 )]
+position = Vector2( 847, 566 )
+
+[node name="spriteAnimation" parent="ySort/seeker/bodyPivot" index="0"]
+frame = 4
+
+[node name="seekerLight" parent="ySort/seeker" index="5"]
+joystickRightPath = NodePath("../controls/rightJoystick")
+
+[node name="objects" type="TileMap" parent="ySort"]
+position = Vector2( 1.52588e-05, 6.10352e-05 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 48, 48 )
+cell_tile_origin = 1
+cell_y_sort = true
+show_collision = true
+centered_textures = true
+collision_layer = 16
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 393286, 26, 0, 393296, 27, 0, 393307, 28, 0, 524311, 22, 0, 589843, 23, 0, 720901, 21, 0, 720913, 22, 0, 786446, 23, 0 )
+
+[node name="hallway_lights" type="Node2D" parent="."]
+
+[node name="horned" type="Light2D" parent="hallway_lights"]
+position = Vector2( 2064, 260 )
+texture = ExtResource( 5 )
+texture_scale = 2.2
+energy = 0.7
+
+[node name="king" type="Light2D" parent="hallway_lights"]
+position = Vector2( 2444, 253 )
+texture = ExtResource( 5 )
+texture_scale = 2.38
+energy = 0.7
+range_item_cull_mask = 3
+
+[node name="hangman" type="Light2D" parent="hallway_lights"]
+position = Vector2( 2830, 259 )
+texture = ExtResource( 5 )
+texture_scale = 2.2
+energy = 0.7
+
+[node name="canvasModulate" type="CanvasModulate" parent="."]
+visible = false
+position = Vector2( 0.000244141, 0 )
+color = Color( 0.121569, 0.109804, 0.109804, 1 )
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "alert"
+anims/RESET = SubResource( 1 )
+anims/alert = SubResource( 2 )
+
+[editable path="ySort/seeker"]

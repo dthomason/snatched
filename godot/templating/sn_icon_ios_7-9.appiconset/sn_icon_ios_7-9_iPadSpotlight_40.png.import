@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/sn_icon_ios_7-9_iPadSpotlight_40.png-ee9c4a4c7a0bc3f3ca5cc92cf5d48628.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://templating/sn_icon_ios_7-9.appiconset/sn_icon_ios_7-9_iPadSpotlight_40.png"
+dest_files=[ "res://.import/sn_icon_ios_7-9_iPadSpotlight_40.png-ee9c4a4c7a0bc3f3ca5cc92cf5d48628.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

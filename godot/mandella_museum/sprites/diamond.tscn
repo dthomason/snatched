@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://mandella_museum/sprites/animations/hope_diamond.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "// Mandatory line to define 2D shaders
+shader_type canvas_item;
+
+// Allows us to assign a normal map to the shader in the Inspector
+uniform sampler2D normal_map;
+
+void fragment(){
+	// Converts the texture data into a unit vector, with each channel in the [-1, 1] range
+
+NORMAL = 2.0 * texture(normal_map, UV).rgb - 1.0;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 384, 0, 192, 160 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 768, 0, 192, 160 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 192, 160 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="node2D" type="Node2D"]
+
+[node name="animatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
+frames = SubResource( 6 )
+frame = 6

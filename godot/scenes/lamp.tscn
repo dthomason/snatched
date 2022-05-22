@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mandella_museum/sprites/particles/magic_05.png" type="Texture" id=1]
+
+[node name="lamp" type="Node2D"]
+
+[node name="polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.266667, 0.266667, 0.266667, 1 )
+polygon = PoolVector2Array( -34, 4, -25, -296, 12, -300, 28, 14 )
+
+[node name="polygon2D_2" type="Polygon2D" parent="."]
+position = Vector2( -7.38461, -262.6 )
+scale = Vector2( 1.82418, 0.4 )
+color = Color( 0.788235, 0.776471, 0.568627, 1 )
+polygon = PoolVector2Array( -65.5723, 31.5, -40, -341, 32, -337, 70.3795, 41.5 )
+
+[node name="light2D" type="Light2D" parent="."]
+position = Vector2( -16, -301 )
+texture = ExtResource( 1 )
+texture_scale = 3.21
+color = Color( 0.752941, 0.611765, 0.360784, 1 )
