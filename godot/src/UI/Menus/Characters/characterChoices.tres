@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=2]
+
+[ext_resource path="res://assets/characters/berenstein/animations/dance charming/TED_dance_charming_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/characters/berenstein/animations/dance charming/TED_dance_charming_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/berenstein/animations/dance charming/TED_dance_charming_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/characters/berenstein/animations/dance charming/TED_dance_charming_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/characters/berenstein/animations/dance charming/TED_dance_charming_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/characters/berenstein/animations/dance charming/TED_dance_charming_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/characters/burney/animations/dance heavy metal/DARKTED_dance_heavy_metal_5.png" type="Texture" id=7]
+[ext_resource path="res://assets/characters/burney/animations/dance heavy metal/DARKTED_dance_heavy_metal_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/characters/burney/animations/dance heavy metal/DARKTED_dance_heavy_metal_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/characters/burney/animations/dance heavy metal/DARKTED_dance_heavy_metal_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/characters/burney/animations/dance heavy metal/DARKTED_dance_heavy_metal_4.png" type="Texture" id=11]
+[ext_resource path="res://assets/characters/burney/animations/dance heavy metal/DARKTED_dance_heavy_metal_1.png" type="Texture" id=12]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "seeker",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "runner",
+"speed": 10.0
+} ]

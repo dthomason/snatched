@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/characters/burney/animations/fatality/head_x_out.png" type="Texture" id=1]
+[ext_resource path="res://src/Characters/runner/effects/runner_animations.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://src/UI/Components/joystick/virtual_joystick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Characters/runner/runner.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 13 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 52.0384
+
+[sub_resource type="Animation" id=6]
+resource_name = "fatality"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("bodyPivot/rollingHead:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.39 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("bodyPivot/rollingHead:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -2, -0.191269, -16.0985, 0.6, 50.5, -800, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.36, 3.41 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("bodyPivot/rollingHead:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -219, -0.25, 0, 0.25, 0, -530, -0.25, 0, 0.25, 0, -38, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.39, 0.79, 1.85 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bodyPivot/rollingHead:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4, 1.78, 3.87 ),
+"transitions": PoolRealArray( 0.659754, 0.435275, 1.7411 ),
+"update": 0,
+"values": [ -360.0, 360.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bodyPivot/rollingHead:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="runner" type="KinematicBody2D"]
+collision_mask = 48
+script = ExtResource( 4 )
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+shape = SubResource( 1 )
+
+[node name="killZone" type="Area2D" parent="."]
+collision_mask = 48
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="killZone"]
+position = Vector2( 0, -102 )
+shape = SubResource( 4 )
+
+[node name="bodyPivot" type="Position2D" parent="."]
+
+[node name="rollingHead" type="Sprite" parent="bodyPivot"]
+visible = false
+position = Vector2( -2, -219 )
+rotation = 1.69163
+texture = ExtResource( 1 )
+
+[node name="spriteAnimation" type="AnimatedSprite" parent="bodyPivot"]
+frames = ExtResource( 2 )
+animation = "fatality"
+offset = Vector2( -6, -57 )
+
+[node name="camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = -20000
+limit_top = -20000
+limit_right = 20000
+limit_bottom = 20000
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="controls" type="CanvasLayer" parent="."]
+
+[node name="leftJoystick" parent="controls" instance=ExtResource( 3 )]
+margin_left = 82.0
+margin_top = -286.0
+margin_right = 282.0
+margin_bottom = -86.0
+rect_pivot_offset = Vector2( 100, 99 )
+pressed_color = Color( 0.27451, 0.27451, 0.27451, 1 )
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/fatality = SubResource( 6 )
+anims/idle = SubResource( 7 )
+
+[connection signal="body_entered" from="killZone" to="." method="_on_killZone_body_entered"]
+[connection signal="animation_finished" from="animationPlayer" to="." method="_on_animationPlayer_animation_finished"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/title_scene_images/lean_back_logo.png" type="Texture" id=1]
-[ext_resource path="res://mandella_museum/sprites/not_quites/blank_slate.svg" type="Texture" id=2]
-[ext_resource path="res://mandella_museum/sprites/lights/full_white_light.png" type="Texture" id=3]
-[ext_resource path="res://mandella_museum/sprites/lights/circle_05.png" type="Texture" id=4]
+[ext_resource path="res://assets/not_quites/blank_slate.svg" type="Texture" id=2]
+[ext_resource path="res://assets/lights/full_white_light.png" type="Texture" id=3]
+[ext_resource path="res://assets/lights/circle_05.png" type="Texture" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "// Mandatory line to define 2D shaders
