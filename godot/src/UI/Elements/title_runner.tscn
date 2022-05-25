@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UI/Menus/animated_burney.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://src/UI/Elements/kinematicBody2D.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 59.5, 76 )
+
+[node name="runner" type="KinematicBody2D"]
+script = ExtResource( 6 )
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -3.5, 8 )
+shape = SubResource( 2 )
+
+[node name="bodyPivot" type="Position2D" parent="."]
+
+[node name="animatedSprite" type="AnimatedSprite" parent="bodyPivot"]
+frames = ExtResource( 1 )
+animation = "fly"
+frame = 8
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="animation_finished" from="bodyPivot/animatedSprite" to="." method="_on_animatedSprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

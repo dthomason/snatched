@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/title_scene/title_scene_images/main_title.png" type="Texture" id=1]
+[ext_resource path="res://assets/lights/star_08.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../light2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../light2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.20947, 1.20947 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "glisten"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../light2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.2 ),
+"transitions": PoolRealArray( 0.5, 0.615572 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../light2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.2 ),
+"transitions": PoolRealArray( 0.707107, 1.23114 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 1.20947, 1.20947 ) ]
+}
+
+[node name="node2D" type="Node2D"]
+
+[node name="Logo" type="TextureRect" parent="."]
+anchor_right = 0.875
+anchor_bottom = 0.278
+margin_left = 505.0
+margin_top = 3.0
+margin_right = 1171.0
+margin_bottom = 265.0
+rect_pivot_offset = Vector2( 349, 70 )
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="light2D" type="Light2D" parent="."]
+position = Vector2( 836, 54 )
+rotation = 1.5708
+scale = Vector2( 1.20947, 1.20947 )
+texture = ExtResource( 3 )
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Logo")
+autoplay = "glisten"
+anims/RESET = SubResource( 1 )
+anims/glisten = SubResource( 2 )
