@@ -42,7 +42,7 @@ position = Vector2( 0, 38 )
 position = Vector2( 0, 1 )
 frames = ExtResource( 3 )
 animation = "idle"
-frame = 22
+frame = 10
 playing = true
 offset = Vector2( -1, -66.333 )
 
@@ -78,6 +78,15 @@ mode = 2
 range_height = 150.3
 shadow_enabled = true
 script = ExtResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = -20000
+limit_top = -20000
+limit_right = 20000
+limit_bottom = 20000
+limit_smoothed = true
+smoothing_enabled = true
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 

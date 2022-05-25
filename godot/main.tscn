@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sprite_sheets/single_diamond.png" type="Texture" id=8]
 [ext_resource path="res://assets/theme/fonts/menu_font_48.tres" type="DynamicFont" id=9]
 [ext_resource path="res://main.gd" type="Script" id=10]
-[ext_resource path="res://src/Worlds/mandella/mandella_museum.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/World/mandella/world.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxTexture" id=8]
 

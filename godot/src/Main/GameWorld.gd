@@ -4,18 +4,21 @@
 extends Node2D
 
 export var PlayerScene: PackedScene
-export var CharacterScene: PackedScene
+export var SeekerScene: PackedScene
+export var RunnerScene: PackedScene
 
 var characters := {}
 var last_name: String
 var last_color: Color
+var is_seeker: bool
 
-onready var world := $museum
+onready var world := $world
 onready var player: Node = $Player
 onready var game_ui := $CanvasLayer/GameUI
 
 
 func _ready() -> void:
+	pick_seeker()
 	#warning-ignore: return_value_discarded
 	ServerConnection.connect(
 		"initial_state_received", self, "_on_ServerConnection_initial_state_received"
@@ -26,6 +29,9 @@ func setup(username: String, color: Color) -> void:
 	last_color = color
 	#ServerConnection.send_spawn(color, username)
 
+func pick_seeker():
+	randomize()
+	print(rand_range(0,1))
 
 # The main entry point. Sets up the client player and the various characters that
 # are already logged into the world, and sets up the signal chain to respond to
@@ -43,10 +49,10 @@ func join_world(
 
 	var player_position: Vector2 = Vector2(state_positions[user_id].x, state_positions[user_id].y)
 	player.setup(username, player_color, player_position, world.get_limits())
-	game_ui.setup(player_color)
 
 	var presences := ServerConnection.presences
 	for p in presences.keys():
+		print(p)
 		var character_position := Vector2(state_positions[p].x, state_positions[p].y)
 		create_character(
 			p, state_names[p], character_position, state_inputs[p].dir, state_colors[p], true
@@ -74,7 +80,7 @@ func create_character(
 	color: Color,
 	do_spawn: bool
 ) -> void:
-	var character := CharacterScene.instance()
+	var character := RunnerScene.instance()
 	character.position = position
 	character.direction.x = direction_x
 	character.color = color
@@ -160,12 +166,6 @@ func _on_ServerConnection_initial_state_received(
 		"initial_state_received", self, "_on_ServerConnection_initial_state_received"
 	)
 	join_world(positions, inputs, colors, names)
-
-
-func _on_GameUI_color_changed(color) -> void:
-	game_ui.setup(color)
-	ServerConnection.send_player_color_update(color)
-	ServerConnection.update_player_character_async(color, player.username)
 
 
 func _on_GameUI_text_sent(text) -> void:

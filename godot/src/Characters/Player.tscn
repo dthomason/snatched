@@ -1,27 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/Characters/Player.gd" type="Script" id=1]
-[ext_resource path="res://src/Characters/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://src/Characters/runner/runner.tscn" type="PackedScene" id=2]
 
-[node name="Player"]
+[node name="Player" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
-current = true
-process_mode = 0
-limit_left = -2000
-limit_top = -2000
-limit_right = 10000
-limit_bottom = 10000
-limit_smoothed = true
-smoothing_enabled = true
-editor_draw_screen = false
-script = ExtResource( 2 )
-
-[node name="Tween" parent="." index="3"]
-playback_process_mode = 0
-
-[node name="Timer" type="Timer" parent="." index="5"]
+[node name="Timer" type="Timer" parent="." index="6"]
 process_mode = 0
 wait_time = 0.05
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

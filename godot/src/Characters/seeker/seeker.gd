@@ -1,8 +1,17 @@
+# This is a Character there can only be one right now
+
 class_name Seeker
 
 extends KinematicBody2D
 
-#const joystickLeft: PackedScene = preload("res://src/UI/Components/joystick/virtual_joystick.tscn")
+signal spawned
+
+enum STATES {IDLE, SEES, UPPER}
+var state = STATES.IDLE
+
+var velocity := Vector2.ZERO
+var direction := Vector2.ZERO
+
 onready var bodyPivot = $bodyPivot
 onready var _animated_sprite = $bodyPivot/spriteAnimation
 onready var _seeker_light = $seekerLight

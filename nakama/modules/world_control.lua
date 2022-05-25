@@ -12,6 +12,7 @@ local WORLD_WIDTH = 1500
 -- Custom operation codes. Nakama specific codes are <= 0.
 local OpCodes = {
     update_position = 1,
+    update_rotation =
     update_input = 2,
     update_state = 3,
     update_jump = 4,

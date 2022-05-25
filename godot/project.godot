@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Autoload/Delegates/Authenticator.gd"
 }, {
-"base": "Reference",
+"base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
 "path": "res://src/Characters/Character.gd"
@@ -129,17 +129,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/com.heroiclabs.nakama/api/NakamaWriteStorageObject.gd"
 }, {
-"base": "Reference",
+"base": "Runner",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Characters/Player.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Runner",
+"language": "GDScript",
+"path": "res://src/Characters/runner/runner.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Sawbone",
 "language": "GDScript",
 "path": "res://src/Characters/sawbone/sawbone.gd"
 }, {
-"base": "Reference",
+"base": "KinematicBody2D",
 "class": "Seeker",
 "language": "GDScript",
 "path": "res://src/Characters/seeker/seeker.gd"
@@ -153,11 +158,6 @@ _global_script_classes=[ {
 "class": "VirtualJoystick",
 "language": "GDScript",
 "path": "res://src/UI/Components/joystick/virtual_joystick.gd"
-}, {
-"base": "Reference",
-"class": "runner",
-"language": "GDScript",
-"path": "res://src/Characters/runner/runner.gd"
 } ]
 _global_script_class_icons={
 "Authenticator": "",
@@ -185,11 +185,11 @@ _global_script_class_icons={
 "NakamaStorageObjectId": "",
 "NakamaWriteStorageObject": "",
 "Player": "",
+"Runner": "",
 "Sawbone": "",
 "Seeker": "",
 "StorageWorker": "",
-"VirtualJoystick": "",
-"runner": ""
+"VirtualJoystick": ""
 }
 
 [application]
@@ -306,4 +306,4 @@ environment/default_environment="res://src/default_env.tres"
 
 [world]
 
-2d/cell_size=64
+2d/cell_size=48

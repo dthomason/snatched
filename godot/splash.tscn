@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/Worlds/mandella/mandella_museum.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/World/mandella/world.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/Menus/load_to_splash_menu.tscn" type="PackedScene" id=2]
 
 [node name="node" type="Node"]

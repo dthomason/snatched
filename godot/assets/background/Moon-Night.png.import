@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/City-Block.png-efa9733ef47b56dc3c4b682110927067.stex"
+path="res://.import/Moon-Night.png-aa4fa74dc15875455714fc057ce46dab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/Menus/City-Block.png"
-dest_files=[ "res://.import/City-Block.png-efa9733ef47b56dc3c4b682110927067.stex" ]
+source_file="res://assets/background/Moon-Night.png"
+dest_files=[ "res://.import/Moon-Night.png-aa4fa74dc15875455714fc057ce46dab.stex" ]
 
 [params]
 

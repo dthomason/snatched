@@ -1,15 +1,24 @@
-class_name runner
+# This is a Character, there can be multiple in one game
+
+class_name Runner
 extends KinematicBody2D
+
+signal spawned
+
+enum STATES {IDLE, KILLED, UPPER}
+var state = STATES.IDLE
+
+var velocity := Vector2.ZERO
+var direction := Vector2.ZERO
+var username := "" setget _set_username
 
 onready var joystickLeft : VirtualJoystick = $controls/leftJoystick
 onready var _animated_sprite = $bodyPivot/spriteAnimation
 onready var _rolling_head = $bodyPivot/rollingHead
 onready var _animated_player = $animationPlayer
 
-var blood = load("res://scenes/blood.tscn")
+var blood = load("res://src/Props/blood.tscn")
 
-enum STATES {IDLE, KILLED}
-var state = STATES.IDLE
 
 export var speed : float = 350
 
@@ -20,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if joystickLeft and joystickLeft.is_pressed():
-		var direction = joystickLeft.get_output().normalized()
+		direction = joystickLeft.get_output().normalized()
 			
 		move_and_slide(direction * speed)
 
@@ -43,6 +52,14 @@ func _on_e_lvl_promoter_body_exited(body):
 func _on_e_lvl_demoter_body_exited(body):
 	z_index = 0
 	set_collision_mask_bit(7, false)
+	
+func spawn() -> void:
+	emit_signal("spawned")
+
+
+func despawn() -> void:
+	queue_free()
+	
 	
 func go_to_state(new_state):
 	if state != new_state:
@@ -72,4 +89,7 @@ func _on_animationPlayer_animation_finished(anim_name):
 		print("fatality")
 		go_to_state(STATES.IDLE)
 		
-	
+		
+func _set_username(value: String) -> void:
+	username = value
+

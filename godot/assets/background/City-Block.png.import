@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moon-Night-Blurred-3.6%.png-cf67ccb29688c7e8a38c554f051a2fb7.stex"
+path="res://.import/City-Block.png-0da842a0c94c379ce2eb785a9ffc5534.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/Menus/Moon-Night-Blurred-3.6%.png"
-dest_files=[ "res://.import/Moon-Night-Blurred-3.6%.png-cf67ccb29688c7e8a38c554f051a2fb7.stex" ]
+source_file="res://assets/background/City-Block.png"
+dest_files=[ "res://.import/City-Block.png-0da842a0c94c379ce2eb785a9ffc5534.stex" ]
 
 [params]
 

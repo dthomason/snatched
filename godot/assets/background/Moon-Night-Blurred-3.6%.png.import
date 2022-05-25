@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background-Night.png-903d44b7fa7ec0c718458ceabe45e74c.stex"
+path="res://.import/Moon-Night-Blurred-3.6%.png-50285a0503012226a99bb9494cd7de3c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/Menus/Background-Night.png"
-dest_files=[ "res://.import/Background-Night.png-903d44b7fa7ec0c718458ceabe45e74c.stex" ]
+source_file="res://assets/background/Moon-Night-Blurred-3.6%.png"
+dest_files=[ "res://.import/Moon-Night-Blurred-3.6%.png-50285a0503012226a99bb9494cd7de3c.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moon-Night.png-b9f6c19f7a333a89caa5bda3c51e59c6.stex"
+path="res://.import/full_sprites.png-d9647b036f9e4f36c1a4d291269867c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/UI/Menus/Moon-Night.png"
-dest_files=[ "res://.import/Moon-Night.png-b9f6c19f7a333a89caa5bda3c51e59c6.stex" ]
+source_file="res://assets/sprite_sheets/full_sprites.png"
+dest_files=[ "res://.import/full_sprites.png-d9647b036f9e4f36c1a4d291269867c6.stex" ]
 
 [params]
 
