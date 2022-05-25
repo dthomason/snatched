@@ -248,7 +248,7 @@ position = Vector2( 81.0002, 1217 )
 rotation = 0.00486696
 frames = ExtResource( 6 )
 animation = "fly"
-frame = 11
+frame = 4
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

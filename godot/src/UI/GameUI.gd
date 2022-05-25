@@ -2,8 +2,6 @@
 # controls that the world can react to.
 extends Control
 
-signal leftJoystickPressed
-signal rightJoystickPressed
 signal text_sent(text)
 signal chat_edit_started
 signal chat_edit_ended
