@@ -102,15 +102,6 @@ frames = ExtResource( 2 )
 animation = "fatality"
 offset = Vector2( -6, -57 )
 
-[node name="camera2D" type="Camera2D" parent="."]
-current = true
-limit_left = -20000
-limit_top = -20000
-limit_right = 20000
-limit_bottom = 20000
-limit_smoothed = true
-smoothing_enabled = true
-
 [node name="controls" type="CanvasLayer" parent="."]
 
 [node name="leftJoystick" parent="controls" instance=ExtResource( 3 )]

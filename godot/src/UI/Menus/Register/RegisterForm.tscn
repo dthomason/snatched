@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/theme/gdquest.theme" type="Theme" id=1]
+[ext_resource path="res://assets/theme/davesTheme.theme" type="Theme" id=1]
 [ext_resource path="res://src/UI/Menus/Register/RegisterForm.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/Elements/LineEditValidate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UI/Menus/Login/PasswordField.gd" type="Script" id=4]
@@ -8,6 +8,9 @@
 [ext_resource path="res://src/UI/Menus/Login/EmailField.gd" type="Script" id=6]
 [ext_resource path="res://src/UI/Elements/StatusPanel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/UI/Menus/Login/PasswordRepeatField.gd" type="Script" id=8]
+[ext_resource path="res://src/UI/Elements/LineEditValidate.gd" type="Script" id=9]
+[ext_resource path="res://assets/theme/fonts/font_title.tres" type="DynamicFont" id=10]
+[ext_resource path="res://src/UI/Elements/LineEditStylishBlue.tscn" type="PackedScene" id=11]
 
 [node name="RegisterForm" type="Panel"]
 anchor_left = 0.5
@@ -21,31 +24,29 @@ margin_bottom = 196.0
 rect_min_size = Vector2( 0, 272 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Email" type="HBoxContainer" parent="."]
 anchor_right = 1.0
-margin_left = 16.0
-margin_top = 16.0
-margin_right = -17.0
-margin_bottom = 72.0
+margin_left = 12.0
+margin_top = -171.0
+margin_right = -21.0
+margin_bottom = 129.0
 size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+alignment = 1
 
 [node name="Label" type="Label" parent="Email"]
-margin_top = 12.0
-margin_right = 120.0
-margin_bottom = 43.0
+margin_left = 191.0
+margin_top = 130.0
+margin_right = 360.0
+margin_bottom = 170.0
 rect_min_size = Vector2( 120, 0 )
-text = "Email"
+text = "Username"
 
 [node name="LineEditValidate" parent="Email" instance=ExtResource( 3 )]
-margin_left = 136.0
+visible = false
+margin_left = 185.0
 margin_right = 551.0
+margin_bottom = 300.0
 script = ExtResource( 6 )
 
 [node name="Password" type="HBoxContainer" parent="."]
@@ -61,19 +62,19 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Password"]
 margin_top = 8.0
-margin_right = 120.0
-margin_bottom = 39.0
+margin_right = 158.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 120, 0 )
 text = "Password"
 
 [node name="LineEditValidate" parent="Password" instance=ExtResource( 3 )]
-margin_left = 136.0
+margin_left = 174.0
 margin_right = 551.0
-margin_bottom = 48.0
 secret = true
 script = ExtResource( 4 )
 
 [node name="PasswordRepeat" type="HBoxContainer" parent="."]
+visible = false
 anchor_right = 1.0
 margin_left = 16.0
 margin_top = 156.0
@@ -87,14 +88,13 @@ __meta__ = {
 [node name="Label" type="Label" parent="PasswordRepeat"]
 margin_top = 8.0
 margin_right = 120.0
-margin_bottom = 39.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 120, 0 )
 text = "Repeat"
 
 [node name="LineEditValidate" parent="PasswordRepeat" instance=ExtResource( 3 )]
 margin_left = 136.0
 margin_right = 551.0
-margin_bottom = 48.0
 secret = true
 script = ExtResource( 8 )
 password_field_path = NodePath("../../Password/LineEditValidate")
@@ -114,6 +114,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -144,6 +145,33 @@ size_flags_horizontal = 3
 text = "Cancel"
 
 [node name="StatusPanel" parent="." instance=ExtResource( 7 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_bottom = 257.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 736.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 10 )
+text = "Username"
+align = 1
+
+[node name="LineEdit" parent="VBoxContainer" instance=ExtResource( 11 )]
+margin_top = 77.0
+margin_right = 736.0
+margin_bottom = 177.0
+
+[node name="LineEditValidate" type="LineEdit" parent="VBoxContainer"]
+margin_top = 194.0
+margin_right = 736.0
+margin_bottom = 250.0
+align = 1
+placeholder_text = "Nickname"
+script = ExtResource( 9 )
+
 [connection signal="text_entered" from="Email/LineEditValidate" to="." method="_on_LineEditValidate_text_entered"]
 [connection signal="text_entered" from="Password/LineEditValidate" to="." method="_on_LineEditValidate_text_entered"]
 [connection signal="text_entered" from="PasswordRepeat/LineEditValidate" to="." method="_on_LineEditValidate_text_entered"]

@@ -12,22 +12,22 @@ var status := "" setget set_status
 
 
 func open() -> void:
-	show()
-	emit_signal("open")
+  show()
+  emit_signal("open")
 
 
 func close() -> void:
-	hide()
-	emit_signal("closed")
+  hide()
+  emit_signal("closed")
 
 
 func reset() -> void:
-	pass
+  pass
 
 
 func set_is_enabled(value: bool) -> void:
-	is_enabled = value
+  is_enabled = value
 
 
 func set_status(value: String) -> void:
-	status = value
+  status = value

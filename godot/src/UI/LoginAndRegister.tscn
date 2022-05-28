@@ -7,12 +7,33 @@
 [node name="LoginAndRegister" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -717, -396 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true,
+"_edit_vertical_guides_": [ 568.0, 1408.0 ]
+}
 
 [node name="LoginForm" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.308
+anchor_top = 0.481
+anchor_right = 0.683
+anchor_bottom = 0.948
+margin_left = 16.64
+margin_top = -143.48
+margin_right = -15.3601
+margin_bottom = -183.84
 
 [node name="RegisterForm" parent="." instance=ExtResource( 2 )]
 visible = false
+anchor_left = 0.296
+anchor_top = 0.363
+anchor_right = 0.704
+anchor_bottom = 1.0
+margin_left = 26.68
+margin_top = 71.96
+margin_right = -65.6801
+margin_bottom = -207.0
 
 [connection signal="login_pressed" from="LoginForm" to="." method="_on_LoginForm_login_pressed"]
 [connection signal="register_pressed" from="LoginForm" to="." method="_on_LoginForm_register_pressed"]

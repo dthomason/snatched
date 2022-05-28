@@ -47,10 +47,10 @@ script/source = "extends CPUParticles2D
 
 
 func _ready():
-	pass
+  pass
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	self.emitting = true
+  self.emitting = true
 "
 
 [sub_resource type="Shader" id=1]
@@ -123,14 +123,14 @@ tracks/3/keys = {
 "values": [ 1, 1, 2, 1, 1 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ColorRect:color")
+tracks/4/path = NodePath("Container/ColorRect:color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 1.6 ),
-"transitions": PoolRealArray( 2.46229, 1 ),
+"transitions": PoolRealArray( 2.46229, 3.73213 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
@@ -239,21 +239,31 @@ layer = 100
 follow_viewport_enable = true
 
 [node name="LoginAndRegister" parent="CanvasLayer" instance=ExtResource( 3 )]
+margin_left = -31.0
+margin_top = -41.0
+margin_right = -31.0
+margin_bottom = -41.0
 
 [node name="CharacterMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
-visible = false
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+margin_right = 164.0
+margin_bottom = 45.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 81.0002, 1217 )
 rotation = 0.00486696
 frames = ExtResource( 6 )
 animation = "fly"
-frame = 4
+frame = 2
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -7.0
+margin_top = -1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -262,7 +272,6 @@ anims/title_jet_pak = SubResource( 10 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-autoplay = true
 
 [connection signal="timeout" from="load_to_splash/title/first_confetti/Timer" to="load_to_splash/title/first_confetti" method="_on_Timer_timeout"]
 [connection signal="curve_tween" from="load_to_splash/title/diamond/scaleDiamond" to="load_to_splash/title/diamond" method="_on_CurveTween_curve_tween"]

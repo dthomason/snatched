@@ -1,0 +1,52 @@
+[gd_resource type="Theme" load_steps=9 format=2]
+
+[ext_resource path="res://src/UI/Menus/Register/button.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/theme/fonts/default_font_italics.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/theme/stylebox/line_edit.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/theme/stylebox/button_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/theme/stylebox/panel_popup.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/theme/fonts/radioCanada.tres" type="DynamicFont" id=6]
+[ext_resource path="res://src/UI/Menus/Register/readonly.tres" type="StyleBox" id=7]
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 1.0
+content_margin_right = 12.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.227451, 0.435294, 0.690196, 0.588235 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.941176, 0.176471, 0.160784, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 12.0
+expand_margin_right = 12.0
+expand_margin_top = 12.0
+expand_margin_bottom = 12.0
+shadow_color = Color( 0, 0, 0, 0.0705882 )
+shadow_size = 9
+
+[resource]
+Button/colors/font_color = Color( 0.764706, 0.764706, 0.764706, 1 )
+Button/fonts/font = ExtResource( 2 )
+Button/styles/disabled = ExtResource( 1 )
+Button/styles/normal = ExtResource( 4 )
+LineEdit/colors/background = Color( 0.788235, 0.788235, 0.788235, 1 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 1, 1, 1, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/input_color = Color( 0.94902, 0.941176, 0.941176, 1 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 33
+LineEdit/fonts/font = ExtResource( 6 )
+LineEdit/styles/error = SubResource( 5 )
+LineEdit/styles/focus = ExtResource( 3 )
+LineEdit/styles/normal = ExtResource( 5 )
+LineEdit/styles/read_only = ExtResource( 7 )

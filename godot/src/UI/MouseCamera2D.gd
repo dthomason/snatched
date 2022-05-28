@@ -4,4 +4,4 @@ extends Camera2D
 var factor := 0.01
 
 func _process(_delta: float) -> void:
-	offset = get_local_mouse_position() * factor
+  offset = get_local_mouse_position() * factor

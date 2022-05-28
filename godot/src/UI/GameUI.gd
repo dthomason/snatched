@@ -12,38 +12,38 @@ onready var toggle_chat_button := $HBoxContainer/ToggleChatButton
 onready var notifications_ui := $NotificationsUI
 
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		chat_box.line_edit.release_focus()
+  if event is InputEventMouseButton:
+    chat_box.line_edit.release_focus()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		if not chat_box.visible:
-			toggle_chat_button.pressed = true
-		if not chat_box.line_edit.has_focus():
-			chat_box.line_edit.grab_focus()
-	if event.is_action_pressed("ui_cancel") and not chat_box.line_edit.has_focus():
-		toggle_chat_button.pressed = false
+  if event.is_action_pressed("ui_accept"):
+    if not chat_box.visible:
+      toggle_chat_button.pressed = true
+    if not chat_box.line_edit.has_focus():
+      chat_box.line_edit.grab_focus()
+  if event.is_action_pressed("ui_cancel") and not chat_box.line_edit.has_focus():
+    toggle_chat_button.pressed = false
 
 
 func add_chat_reply(text: String, sender: String, text_color: Color) -> void:
-	chat_box.add_reply(text, sender, text_color)
+  chat_box.add_reply(text, sender, text_color)
 
 
 func add_notification(username: String, text_color: Color, disconnected := false) -> void:
-	notifications_ui.add_notification(username, text_color, disconnected)
+  notifications_ui.add_notification(username, text_color, disconnected)
 
 
 func _on_ChatBox_text_sent(text: String) -> void:
-	emit_signal("text_sent", text)
+  emit_signal("text_sent", text)
 
 
 func _on_LogoutButton_pressed() -> void:
-	emit_signal("logged_out")
+  emit_signal("logged_out")
 
 
 func _on_ChatBox_edit_started() -> void:
-	emit_signal("chat_edit_started")
+  emit_signal("chat_edit_started")
 
 
 func _on_ChatBox_edit_ended() -> void:
-	emit_signal("chat_edit_ended")
+  emit_signal("chat_edit_ended")

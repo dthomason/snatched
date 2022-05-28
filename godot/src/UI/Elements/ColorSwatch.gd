@@ -8,11 +8,11 @@ export var color := Color('ffffff') setget set_color
 
 
 func _ready() -> void:
-	self.color = color
+  self.color = color
 
 func set_color(value: Color) -> void:
-	color = value
-	if not color_rect:
-		yield(self, "ready")
-	color_rect.color = value
+  color = value
+  if not color_rect:
+    yield(self, "ready")
+  color_rect.color = value
 

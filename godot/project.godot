@@ -54,11 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/Elements/Menu.gd"
 }, {
-"base": "Control",
-"class": "MenuList",
-"language": "GDScript",
-"path": "res://src/UI/Elements/MenuList.gd"
-}, {
 "base": "Reference",
 "class": "NakamaAPI",
 "language": "GDScript",
@@ -154,6 +149,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Autoload/Delegates/StorageWorker.gd"
 }, {
+"base": "Resource",
+"class": "UUID",
+"language": "GDScript",
+"path": "res://uuid.gd"
+}, {
 "base": "Control",
 "class": "VirtualJoystick",
 "language": "GDScript",
@@ -169,7 +169,6 @@ _global_script_class_icons={
 "ExceptionHandler": "",
 "LineEditValidate": "",
 "Menu": "",
-"MenuList": "",
 "NakamaAPI": "",
 "NakamaAsyncResult": "",
 "NakamaClient": "",
@@ -189,13 +188,15 @@ _global_script_class_icons={
 "Sawbone": "",
 "Seeker": "",
 "StorageWorker": "",
+"UUID": "",
 "VirtualJoystick": ""
 }
 
 [application]
 
 config/name="snatched"
-run/main_scene="res://src/Main/MainMenu.tscn"
+run/main_scene="res://src/Main/Main.tscn"
+run/low_processor_mode=true
 boot_splash/image="res://assets/title_scene/title_scene_images/daveAppsSquareblkfull.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -208,7 +209,16 @@ config/windows_native_icon="res://assets/theme/icons/AppIcons/Assets.xcassets/Ap
 
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 GameControls="*res://src/Autoload/GameControls.gd"
-ServerConnection="*res://src/Autoload/ServerConnection.gd"
+LocalStorage="*res://src/Autoload/LocalStorage.tscn"
+Online="*res://addons/NakamaOnline/Online.gd"
+
+[debug]
+
+multirun/number_of_windows=2
+multirun/window_distance=1270
+multirun/add_custom_args=true
+multirun/first_window_args="listen"
+multirun/other_window_args="join"
 
 [display]
 
@@ -228,7 +238,7 @@ convert_text_resources_to_binary_on_export=true
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/multirun/plugin.cfg" )
 
 [gui]
 
@@ -295,11 +305,6 @@ toggle_fullscreen={
 
 buffering/agile_event_flushing=true
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
-
-[node]
-
-name_casing=1
 
 [physics]
 

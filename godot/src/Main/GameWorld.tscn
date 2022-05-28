@@ -3,7 +3,7 @@
 [ext_resource path="res://src/Main/GameWorld.gd" type="Script" id=1]
 [ext_resource path="res://src/Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/GameUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/World/mandella/world.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/World/backup_lobby_inherit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Characters/seeker/seeker.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Characters/runner/runner.tscn" type="PackedScene" id=6]
 
@@ -13,17 +13,11 @@ PlayerScene = ExtResource( 2 )
 SeekerScene = ExtResource( 5 )
 RunnerScene = ExtResource( 6 )
 
-[node name="world" parent="." instance=ExtResource( 4 )]
-z_index = -1
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 989, 604 )
+[node name="World" parent="." instance=ExtResource( 4 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource( 3 )]
 
-[connection signal="chat_edit_ended" from="CanvasLayer/GameUI" to="Player" method="_on_GameUI_chat_edit_ended"]
-[connection signal="chat_edit_started" from="CanvasLayer/GameUI" to="Player" method="_on_GameUI_chat_edit_started"]
 [connection signal="logged_out" from="CanvasLayer/GameUI" to="." method="_on_GameUI_logged_out"]
 [connection signal="text_sent" from="CanvasLayer/GameUI" to="." method="_on_GameUI_text_sent"]

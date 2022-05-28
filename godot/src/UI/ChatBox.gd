@@ -16,48 +16,48 @@ onready var line_edit: LineEdit = $HBoxContainer/LineEdit
 
 
 func _init() -> void:
-	visible = false
+  visible = false
 
 
 func _ready() -> void:
-	chat_log.bbcode_text = ""
+  chat_log.bbcode_text = ""
 
 
 # Add a new reply to the chat box, taking `HISTORY_LENGTH` into account.
 func add_reply(text: String, sender_name: String, color: Color) -> void:
-	if reply_count == HISTORY_LENGTH:
-		chat_log.bbcode_text = chat_log.bbcode_text.substr(chat_log.bbcode_text.find("\n"))
-	else:
-		reply_count += 1
-	chat_log.bbcode_text += (
-		"\n[color=#%s]%s[/color]: %s"
-		% [color.to_html(false), sender_name, text]
-	)
+  if reply_count == HISTORY_LENGTH:
+    chat_log.bbcode_text = chat_log.bbcode_text.substr(chat_log.bbcode_text.find("\n"))
+  else:
+    reply_count += 1
+  chat_log.bbcode_text += (
+    "\n[color=#%s]%s[/color]: %s"
+    % [color.to_html(false), sender_name, text]
+  )
 
 
 func send_chat_message() -> void:
-	if line_edit.text.length() == 0:
-		return
-	var text: String = line_edit.text.replace("[", "{").replace("]", "}")
-	emit_signal("text_sent", text)
-	line_edit.text = ""
+  if line_edit.text.length() == 0:
+    return
+  var text: String = line_edit.text.replace("[", "{").replace("]", "}")
+  emit_signal("text_sent", text)
+  line_edit.text = ""
 
 
 func _on_SendButton_pressed() -> void:
-	send_chat_message()
+  send_chat_message()
 
 
 func _on_LineEdit_text_entered(_new_text: String) -> void:
-	send_chat_message()
+  send_chat_message()
 
 
 func _on_LineEdit_focus_entered() -> void:
-	emit_signal("edit_started")
+  emit_signal("edit_started")
 
 
 func _on_LineEdit_focus_exited() -> void:
-	emit_signal("edit_ended")
+  emit_signal("edit_ended")
 
 
 func _on_ToggleChatButton_toggled(button_pressed: bool) -> void:
-	visible = button_pressed
+  visible = button_pressed

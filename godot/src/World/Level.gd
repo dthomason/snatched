@@ -1,7 +1,7 @@
 # Controls the visibility of world elements
 extends Node2D
 
-onready var tilemap: TileMap = $TileMap
+onready var tilemap: TileMap = $tileMap
 
 
 func get_limits() -> Rect2:
@@ -9,3 +9,6 @@ func get_limits() -> Rect2:
 	limits.position = limits.position * tilemap.cell_size + tilemap.global_position
 	limits.size *= tilemap.cell_size
 	return limits
+
+
+

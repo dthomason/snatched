@@ -5,6 +5,8 @@ extends MenuList
 signal login_pressed(email, password, do_remember_email)
 signal register_pressed(email, password, do_remember_email)
 
+
+
 onready var login_form := $LoginForm
 onready var register_form := $RegisterForm
 
@@ -12,33 +14,42 @@ var status := "" setget set_status
 
 
 func _ready() -> void:
-	self.menu_current = login_form
+  $CurveTween.play(4, 800, 0)
+  
+  self.menu_current = login_form
 
 
 func set_status(value: String) -> void:
-	status = value
-	menu_current.status = status
+  status = value
+  menu_current.status = status
 
 
 func reset() -> void:
-	status = ""
-	for child in get_children():
-		child.reset()
-	self.menu_current = login_form
-	is_enabled = true
+  status = ""
+  for child in get_children():
+    child.reset()
+  self.menu_current = login_form
+  is_enabled = true
 
 
 func _on_LoginForm_register_pressed() -> void:
-	self.menu_current = register_form
+  self.menu_current = register_form
 
 
 func _on_LoginForm_login_pressed(email: String, password: String, do_remember_email: bool) -> void:
-	emit_signal("login_pressed", email, password, do_remember_email)
+  emit_signal("login_pressed", email, password, do_remember_email)
 
 
 func _on_RegisterForm_register_pressed(email: String, password: String, do_remember_email: bool) -> void:
-	emit_signal("register_pressed", email, password, do_remember_email)
+  emit_signal("register_pressed", email, password, do_remember_email)
 
 
 func _on_RegisterForm_cancel_pressed() -> void:
-	self.menu_current = login_form
+  self.menu_current = login_form
+
+
+func _on_CurveTween_curve_tween(sat):
+  rect_position.y = sat
+
+#func _on_AnimationPlayer_animation_finished():
+#  $CurveTween.play(.6, 800, 0)
