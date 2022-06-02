@@ -1,0 +1,322 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/characters/white_rig/upper_leg.png" type="Texture" id=1]
+[ext_resource path="res://assets/characters/white_rig/arm_r.png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/white_rig/mouth.png" type="Texture" id=3]
+[ext_resource path="res://assets/characters/white_rig/eye_l.png" type="Texture" id=4]
+[ext_resource path="res://assets/characters/white_rig/shoulder_r.png" type="Texture" id=5]
+[ext_resource path="res://assets/characters/white_rig/shoulder_l.png" type="Texture" id=6]
+[ext_resource path="res://assets/characters/white_rig/torso.png" type="Texture" id=7]
+[ext_resource path="res://assets/characters/white_rig/ear_l.png" type="Texture" id=8]
+[ext_resource path="res://assets/characters/white_rig/eye_r.png" type="Texture" id=9]
+[ext_resource path="res://assets/characters/white_rig/eyebrow_r.png" type="Texture" id=10]
+[ext_resource path="res://assets/characters/white_rig/r_hand.png" type="Texture" id=11]
+[ext_resource path="res://assets/characters/white_rig/ear_r.png" type="Texture" id=12]
+[ext_resource path="res://assets/characters/white_rig/eyebrow_l.png" type="Texture" id=13]
+[ext_resource path="res://assets/characters/white_rig/arm_l.png" type="Texture" id=14]
+[ext_resource path="res://assets/characters/white_rig/foot.png" type="Texture" id=15]
+[ext_resource path="res://assets/characters/white_rig/hand_l.png" type="Texture" id=16]
+[ext_resource path="res://assets/characters/white_rig/head.png" type="Texture" id=17]
+[ext_resource path="res://assets/characters/white_rig/belly.png" type="Texture" id=18]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+void fragment(){
+  COLOR = texture(TEXTURE, UV); //read from texture
+  COLOR.g = 1.0; //set blue channel to 1.0
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+
+[sub_resource type="CanvasItemMaterial" id=6]
+next_pass = SubResource( 5 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RightLegMv:update_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RightLegMv:update_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RightLegMv:update_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LeftLegMv:update_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("LeftLegMv:update_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("LeftLegMv:update_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("LeftShoulderMv:update_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("LeftShoulderMv:update_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("RightShoulderMv:update_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "character"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 65.3893, 41.3096 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+material = SubResource( 6 )
+
+[node name="ShoulderL" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 905, 346 )
+rotation = -1.70931
+scale = Vector2( 0.460144, 0.460144 )
+texture = ExtResource( 6 )
+offset = Vector2( 4.69141, -2.92691 )
+
+[node name="ArmL" type="Sprite" parent="ShoulderL"]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( -14.0515, 40.4942 )
+rotation = 0.343282
+scale = Vector2( 0.990404, 0.990404 )
+texture = ExtResource( 14 )
+offset = Vector2( 2.37646, 13.2368 )
+
+[node name="HandL" type="Sprite" parent="ShoulderL/ArmL"]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 1.55453, 83.5417 )
+rotation = -0.075948
+scale = Vector2( 0.969183, 0.969183 )
+texture = ExtResource( 16 )
+offset = Vector2( 9.30054, 0.64386 )
+
+[node name="LeftLeg" type="Sprite" parent="."]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 893, 409 )
+rotation = 0.490463
+texture = ExtResource( 1 )
+offset = Vector2( 8.46283, 20.1279 )
+
+[node name="LeftFoot" type="Sprite" parent="LeftLeg"]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( -4.39136, 20.9217 )
+rotation = -0.0847249
+texture = ExtResource( 15 )
+offset = Vector2( 13.3706, 15.7211 )
+
+[node name="Torso" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 869, 363 )
+texture = ExtResource( 7 )
+
+[node name="Belly" type="Sprite" parent="Torso"]
+position = Vector2( 37, 26 )
+texture = ExtResource( 18 )
+
+[node name="Head" type="Sprite" parent="."]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 882, 259 )
+rotation = -0.0260719
+texture = ExtResource( 17 )
+
+[node name="EyebrowL" type="Sprite" parent="Head"]
+position = Vector2( 62, -11 )
+scale = Vector2( 0.56, 0.56 )
+texture = ExtResource( 13 )
+
+[node name="EyebrowR" type="Sprite" parent="Head"]
+position = Vector2( 4.175, -7.5 )
+scale = Vector2( 0.55, 0.55 )
+texture = ExtResource( 10 )
+
+[node name="EarR" type="Sprite" parent="Head"]
+position = Vector2( -42, -65 )
+texture = ExtResource( 12 )
+
+[node name="Mouth" type="Sprite" parent="."]
+position = Vector2( 918.978, 296.049 )
+rotation = -0.0260719
+texture = ExtResource( 3 )
+
+[node name="EarL" type="Sprite" parent="."]
+modulate = Color( 0, 0.160784, 1, 1 )
+show_behind_parent = true
+position = Vector2( 935.183, 188.59 )
+rotation = -0.0260719
+texture = ExtResource( 8 )
+
+[node name="EyeR" type="Sprite" parent="."]
+position = Vector2( 892.257, 268.736 )
+rotation = -0.0260719
+texture = ExtResource( 9 )
+
+[node name="EyeL" type="Sprite" parent="."]
+position = Vector2( 938.163, 264.538 )
+rotation = -0.0260719
+texture = ExtResource( 4 )
+
+[node name="RightLeg" type="Sprite" parent="."]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 841, 416 )
+rotation = -0.733472
+texture = ExtResource( 1 )
+offset = Vector2( 8.46283, 20.1279 )
+
+[node name="RightFoot" type="Sprite" parent="RightLeg"]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( -4.71777, 22.3102 )
+rotation = -0.0439957
+texture = ExtResource( 15 )
+offset = Vector2( 13.3706, 15.7211 )
+
+[node name="ShoulderR" type="Sprite" parent="."]
+modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 844, 355 )
+rotation = 1.03843
+scale = Vector2( 0.466965, 0.466965 )
+texture = ExtResource( 5 )
+
+[node name="ArmR" type="Sprite" parent="ShoulderR"]
+position = Vector2( -34.7719, 15.2126 )
+rotation = -0.0525493
+scale = Vector2( 1.00103, 1.00103 )
+texture = ExtResource( 2 )
+offset = Vector2( 36.9071, 60.788 )
+
+[node name="RHand" type="Sprite" parent="ShoulderR/ArmR"]
+position = Vector2( 11.3986, 75.9055 )
+rotation = -0.0112237
+scale = Vector2( 2.15726, 2.171 )
+texture = ExtResource( 11 )
+offset = Vector2( 9.81213, 22 )
+
+[node name="LeftShoulderMv" type="RemoteTransform2D" parent="."]
+self_modulate = Color( 0, 0.160784, 1, 1 )
+position = Vector2( 905, 346 )
+rotation = -1.70931
+scale = Vector2( 0.460144, 0.460144 )
+remote_path = NodePath("../ShoulderL")
+
+[node name="RightShoulderMv" type="RemoteTransform2D" parent="."]
+position = Vector2( 844, 355 )
+rotation = 1.03843
+scale = Vector2( 0.466965, 0.466965 )
+remote_path = NodePath("../ShoulderR")
+
+[node name="LeftLegMv" type="RemoteTransform2D" parent="."]
+position = Vector2( 893, 409 )
+rotation = 0.490463
+remote_path = NodePath("../LeftLeg")
+
+[node name="LeftFootMv" type="RemoteTransform2D" parent="LeftLegMv"]
+position = Vector2( -4.39142, 20.9217 )
+rotation = -0.0847249
+remote_path = NodePath("../../LeftLeg/LeftFoot")
+
+[node name="RightLegMv" type="RemoteTransform2D" parent="."]
+position = Vector2( 841, 416 )
+rotation = -0.733472
+remote_path = NodePath("../RightLeg")
+
+[node name="RightFootMv" type="RemoteTransform2D" parent="RightLegMv"]
+position = Vector2( -4.71777, 22.3102 )
+rotation = -0.0439957
+remote_path = NodePath(".")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+anims/Idle = SubResource( 1 )
+anims/character = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1038, -95 )
+rotation = 3.10176
+shape = SubResource( 3 )

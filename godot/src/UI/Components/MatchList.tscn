@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/theme/icons/level_icon.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ItemList" type="ItemList" parent="."]
+anchor_left = 0.284
+anchor_top = 0.376
+anchor_right = 0.704687
+anchor_bottom = 0.724963
+margin_left = 0.719971
+margin_top = 27.92
+margin_right = 0.719971
+margin_bottom = 27.92
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [ "battleboop", ExtResource( 1 ), false, "fakeGroup", ExtResource( 1 ), false ]
+max_text_lines = 13
+max_columns = 6
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+polygon = PoolVector2Array( -2, -3, 957, -4, 964, 802, 0, 816 )

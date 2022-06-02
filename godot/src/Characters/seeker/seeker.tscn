@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/characters/berenstein/sprites/flashlight.png" type="Texture" id=1]
 [ext_resource path="res://assets/floors/MarbleTiles01_MR_1K/MarbleTiles01_1K_Roughness.png" type="Texture" id=2]
@@ -7,9 +7,15 @@
 [ext_resource path="res://src/Characters/seeker/seeker.gd" type="Script" id=5]
 [ext_resource path="res://src/Characters/seeker/effects/seeker_light.gd" type="Script" id=6]
 [ext_resource path="res://assets/lights/full_white_light.png" type="Texture" id=7]
+[ext_resource path="res://src/Characters/seeker/color_swap.gdshader" type="Shader" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 7.25 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 8 )
+shader_param/old_color = null
+shader_param/new_color = null
 
 [sub_resource type="StreamTexture" id=2]
 flags = 4
@@ -39,10 +45,10 @@ shape = SubResource( 1 )
 position = Vector2( 0, 38 )
 
 [node name="spriteAnimation" type="AnimatedSprite" parent="bodyPivot"]
+material = SubResource( 4 )
 position = Vector2( 0, 1 )
 frames = ExtResource( 3 )
 animation = "idle"
-frame = 7
 playing = true
 offset = Vector2( -1, -66.333 )
 

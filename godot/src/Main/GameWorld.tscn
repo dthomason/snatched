@@ -1,17 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/Main/GameWorld.gd" type="Script" id=1]
+[ext_resource path="res://src/Main/Game.gd" type="Script" id=1]
 [ext_resource path="res://src/Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/GameUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/World/backup_lobby_inherit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Characters/seeker/seeker.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Characters/runner/runner.tscn" type="PackedScene" id=6]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource( 1 )
-PlayerScene = ExtResource( 2 )
-SeekerScene = ExtResource( 5 )
-RunnerScene = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="World" parent="." instance=ExtResource( 4 )]
 

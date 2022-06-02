@@ -30,9 +30,9 @@ margin_bottom = 72.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Email"]
-margin_top = 8.0
+margin_top = 10.0
 margin_right = 120.0
-margin_bottom = 48.0
+margin_bottom = 46.0
 rect_min_size = Vector2( 120, 0 )
 text = "Name"
 
@@ -54,15 +54,16 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Password"]
-margin_top = 8.0
-margin_right = 158.0
-margin_bottom = 48.0
+margin_top = 6.0
+margin_right = 152.0
+margin_bottom = 42.0
 rect_min_size = Vector2( 120, 0 )
 text = "Password"
 
 [node name="LineEditValidate" parent="Password" instance=ExtResource( 5 )]
-margin_left = 174.0
+margin_left = 168.0
 margin_right = 551.0
+margin_bottom = 48.0
 secret = true
 script = ExtResource( 7 )
 
@@ -94,7 +95,7 @@ alignment = 1
 
 [node name="LoginButton" type="Button" parent="HBoxContainer"]
 margin_right = 267.0
-margin_bottom = 70.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 120, 60 )
 size_flags_horizontal = 3
 text = "Log in"
@@ -102,7 +103,7 @@ text = "Log in"
 [node name="RegisterButton" type="Button" parent="HBoxContainer"]
 margin_left = 283.0
 margin_right = 551.0
-margin_bottom = 70.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 120, 60 )
 size_flags_horizontal = 3
 text = "Register"

@@ -28,7 +28,7 @@ func StartGame(players):
 func setupGame(players):
 	Players = players
 	AlivePlayers = players
-	
+
 	for id in players:
 		var currentPlayer = player.instance()
 		currentPlayer.name = str(id)
@@ -39,10 +39,10 @@ func setupGame(players):
 	var myID = OnlineMatch.get_network_unique_id()
 	var player = $PlayersSpawnUnder.get_node(str(myID))
 	player.playerControlled = true
-	
+
 	OnlineMatch.custom_rpc_id_sync(self, 1, "finishedSetup", [myID])
 	get_tree().get_nodes_in_group("GameWorld")[0].HideMatchMakeInterface()
-	
+
 func finishedSetup(id):
 	ReadyPlayers[id] = Players[id]
 	if ReadyPlayers.size() == Players.size():

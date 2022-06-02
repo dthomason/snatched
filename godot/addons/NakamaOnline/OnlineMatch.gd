@@ -62,7 +62,7 @@ signal player_status_changed (player, status)
 signal match_ready (players)
 signal match_not_ready ()
 
-class Player:
+class Online_Player:
 	var session_id: String
 	var peer_id: int
 	var username: String
@@ -72,11 +72,11 @@ class Player:
 		username = _username
 		peer_id = _peer_id
 	
-	static func from_presence(presence: NakamaRTAPI.UserPresence, _peer_id: int) -> Player:
-		return Player.new(presence.session_id, presence.username, _peer_id)
+	static func from_presence(presence: NakamaRTAPI.UserPresence, _peer_id: int) -> Online_Player:
+		return Online_Player.new(presence.session_id, presence.username, _peer_id)
 	
-	static func from_dict(data: Dictionary) -> Player:
-		return Player.new(data['session_id'], data['username'], int(data['peer_id']))
+	static func from_dict(data: Dictionary) -> Online_Player:
+		return Online_Player.new(data['session_id'], data['username'], int(data['peer_id']))
 	
 	func to_dict() -> Dictionary:
 		return {
@@ -94,7 +94,7 @@ static func serialize_players(_players: Dictionary) -> Dictionary:
 static func unserialize_players(_players: Dictionary) -> Dictionary:
 	var result := {}
 	for key in _players:
-		result[key] = Player.from_dict(_players[key])
+		result[key] = Online_Player.from_dict(_players[key])
 	return result
 
 func _set_readonly_variable(_value) -> void:
@@ -277,7 +277,7 @@ func _on_nakama_closed() -> void:
 func _on_nakama_match_created(data: NakamaRTAPI.Match) -> void:
 	match_id = data.match_id
 	my_session_id = data.self_user.session_id
-	var my_player = Player.from_presence(data.self_user, 1)
+	var my_player = Online_Player.from_presence(data.self_user, 1)
 	players[my_session_id] = my_player
 	my_peer_id = 1
 	_next_peer_id = 2
@@ -307,7 +307,7 @@ func _on_nakama_match_presence(data: NakamaRTAPI.MatchPresenceEvent) -> void:
 				}))
 			
 			if players.size() < max_players:
-				var new_player = Player.from_presence(u, _next_peer_id)
+				var new_player = Online_Player.from_presence(u, _next_peer_id)
 				_next_peer_id += 1
 				players[u.session_id] = new_player
 				emit_signal("player_joined", new_player)
@@ -370,7 +370,7 @@ func _on_nakama_matchmaker_matched(data: NakamaRTAPI.MatchmakerMatched) -> void:
 	
 	# Use the list of users to assign peer ids.
 	for u in data.users:
-		players[u.presence.session_id] = Player.from_presence(u.presence, 0)
+		players[u.presence.session_id] = Online_Player.from_presence(u.presence, 0)
 	var session_ids = players.keys();
 	session_ids.sort()
 	for session_id in session_ids:

@@ -35,10 +35,10 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="Email"]
-margin_left = 191.0
-margin_top = 130.0
-margin_right = 360.0
-margin_bottom = 170.0
+margin_left = 195.0
+margin_top = 132.0
+margin_right = 356.0
+margin_bottom = 168.0
 rect_min_size = Vector2( 120, 0 )
 text = "Username"
 
@@ -61,15 +61,16 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Password"]
-margin_top = 8.0
-margin_right = 158.0
-margin_bottom = 48.0
+margin_top = 6.0
+margin_right = 152.0
+margin_bottom = 42.0
 rect_min_size = Vector2( 120, 0 )
 text = "Password"
 
 [node name="LineEditValidate" parent="Password" instance=ExtResource( 3 )]
-margin_left = 174.0
+margin_left = 168.0
 margin_right = 551.0
+margin_bottom = 48.0
 secret = true
 script = ExtResource( 4 )
 
@@ -109,9 +110,6 @@ custom_styles/focus = ExtResource( 5 )
 shortcut_in_tooltip = false
 text = "Remember me"
 flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
@@ -160,14 +158,16 @@ text = "Username"
 align = 1
 
 [node name="LineEdit" parent="VBoxContainer" instance=ExtResource( 11 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 77.0
 margin_right = 736.0
-margin_bottom = 177.0
+margin_bottom = 77.0
 
 [node name="LineEditValidate" type="LineEdit" parent="VBoxContainer"]
-margin_top = 194.0
+margin_top = 94.0
 margin_right = 736.0
-margin_bottom = 250.0
+margin_bottom = 138.0
 align = 1
 placeholder_text = "Nickname"
 script = ExtResource( 9 )

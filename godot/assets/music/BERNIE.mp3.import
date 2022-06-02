@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BERNIE.mp3-9c115c676ff7ee0ee1f158886b8bf0c9.mp3str"
+
+[deps]
+
+source_file="res://assets/music/BERNIE.mp3"
+dest_files=[ "res://.import/BERNIE.mp3-9c115c676ff7ee0ee1f158886b8bf0c9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

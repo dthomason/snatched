@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scene.gd" type="Script" id=1]
+[ext_resource path="res://src/Characters/seeker/color_swap.gdshader" type="Shader" id=2]
+[ext_resource path="res://assets/characters/berenstein/sprites/still_bear.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+render_priority = 3
+shader = ExtResource( 2 )
+shader_param/old_color = null
+shader_param/new_color = null
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/old_color = Color( 0.47451, 0.34902, 0.294118, 1 )
+shader_param/new_color = Color( 0.560784, 0.00784314, 0.00784314, 1 )
+
+[node name="Node2D" type="Node2D"]
+material = SubResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+texture = ExtResource( 3 )

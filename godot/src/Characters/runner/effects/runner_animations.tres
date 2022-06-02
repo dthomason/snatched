@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=49 format=2]
+[gd_resource type="SpriteFrames" load_steps=124 format=2]
 
 [ext_resource path="res://assets/characters/burney/animations/idle/DARKTED_idle_22.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/burney/animations/idle/DARKTED_idle_21.png" type="Texture" id=2]
@@ -48,6 +48,81 @@
 [ext_resource path="res://assets/characters/burney/animations/fatality/frame_10.png" type="Texture" id=46]
 [ext_resource path="res://assets/characters/burney/animations/fatality/frame_11.png" type="Texture" id=47]
 [ext_resource path="res://assets/characters/burney/animations/fatality/frame_12.png" type="Texture" id=48]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_7.png" type="Texture" id=49]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_4.png" type="Texture" id=50]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_6.png" type="Texture" id=51]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_33.png" type="Texture" id=52]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_14.png" type="Texture" id=53]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_2.png" type="Texture" id=54]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_11.png" type="Texture" id=55]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_9.png" type="Texture" id=56]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_18.png" type="Texture" id=57]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_28.png" type="Texture" id=58]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_0.png" type="Texture" id=59]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_43.png" type="Texture" id=60]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_44.png" type="Texture" id=61]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_10.png" type="Texture" id=62]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_11.png" type="Texture" id=63]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_12.png" type="Texture" id=64]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_13.png" type="Texture" id=65]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_16.png" type="Texture" id=66]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_5.png" type="Texture" id=67]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_3.png" type="Texture" id=68]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_17.png" type="Texture" id=69]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_18.png" type="Texture" id=70]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_8.png" type="Texture" id=71]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_50.png" type="Texture" id=72]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_2.png" type="Texture" id=73]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_26.png" type="Texture" id=74]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_3.png" type="Texture" id=75]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_0.png" type="Texture" id=76]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_7.png" type="Texture" id=77]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_29.png" type="Texture" id=78]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_42.png" type="Texture" id=79]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_10.png" type="Texture" id=80]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_1.png" type="Texture" id=81]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_52.png" type="Texture" id=82]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_39.png" type="Texture" id=83]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_38.png" type="Texture" id=84]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_53.png" type="Texture" id=85]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_16.png" type="Texture" id=86]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_41.png" type="Texture" id=87]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_45.png" type="Texture" id=88]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_46.png" type="Texture" id=89]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_1.png" type="Texture" id=90]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_40.png" type="Texture" id=91]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_31.png" type="Texture" id=92]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_37.png" type="Texture" id=93]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_54.png" type="Texture" id=94]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_4.png" type="Texture" id=95]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_5.png" type="Texture" id=96]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_8.png" type="Texture" id=97]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_9.png" type="Texture" id=98]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_12.png" type="Texture" id=99]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_13.png" type="Texture" id=100]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_51.png" type="Texture" id=101]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_32.png" type="Texture" id=102]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_34.png" type="Texture" id=103]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_35.png" type="Texture" id=104]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_36.png" type="Texture" id=105]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_24.png" type="Texture" id=106]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_14.png" type="Texture" id=107]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_27.png" type="Texture" id=108]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_55.png" type="Texture" id=109]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_6.png" type="Texture" id=110]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_47.png" type="Texture" id=111]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_15.png" type="Texture" id=112]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_21.png" type="Texture" id=113]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_25.png" type="Texture" id=114]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_19.png" type="Texture" id=115]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_48.png" type="Texture" id=116]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_49.png" type="Texture" id=117]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_17.png" type="Texture" id=118]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_30.png" type="Texture" id=119]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_20.png" type="Texture" id=120]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_22.png" type="Texture" id=121]
+[ext_resource path="res://assets/characters/burney/animations/revive/DARKTED_revive_23.png" type="Texture" id=122]
+[ext_resource path="res://assets/characters/burney/animations/run and fall/DARKTED_run_and_fall_15.png" type="Texture" id=123]
 
 [resource]
 animations = [ {
@@ -56,13 +131,28 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 27 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": false,
 "name": "fatality",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 76 ), ExtResource( 90 ), ExtResource( 54 ), ExtResource( 75 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 110 ), ExtResource( 49 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 80 ), ExtResource( 55 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 107 ), ExtResource( 112 ), ExtResource( 86 ), ExtResource( 118 ), ExtResource( 57 ), ExtResource( 115 ), ExtResource( 120 ), ExtResource( 113 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 106 ), ExtResource( 114 ), ExtResource( 74 ), ExtResource( 108 ), ExtResource( 58 ), ExtResource( 78 ), ExtResource( 119 ), ExtResource( 92 ), ExtResource( 102 ), ExtResource( 52 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 93 ), ExtResource( 84 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 87 ), ExtResource( 79 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 72 ), ExtResource( 101 ), ExtResource( 82 ), ExtResource( 85 ), ExtResource( 94 ), ExtResource( 109 ) ],
+"loop": false,
+"name": "revive",
+"speed": 5.0
+}, {
+"frames": [  ],
 "loop": true,
-"name": "run",
+"name": "sneak",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 81 ), ExtResource( 73 ), ExtResource( 68 ), ExtResource( 50 ), ExtResource( 67 ), ExtResource( 51 ), ExtResource( 77 ), ExtResource( 71 ), ExtResource( 56 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 53 ), ExtResource( 123 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 70 ) ],
+"loop": false,
+"name": "trip",
 "speed": 10.0
 } ]

@@ -1,20 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://src/Characters/runner/runner.tscn" type="PackedScene" id=2]
 
-[node name="Player" instance=ExtResource( 2 )]
-script = ExtResource( 1 )
-speed = 350.0
+[node name="Node2D" type="Node2D"]
 
-[node name="spriteAnimation" parent="bodyPivot" index="1"]
-position = Vector2( 4, 4 )
+[node name="Runner" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3, -1 )
 
-[node name="Timer" type="Timer" parent="." index="5"]
-process_mode = 0
-wait_time = 0.05
-autostart = true
-
-[node name="camera2D" type="Camera2D" parent="." index="6"]
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

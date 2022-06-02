@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 modulate : hint_color = vec4(1.0);
+
+
+void fragment(){
+    vec4 color = texture(TEXTURE,UV);
+//105, 109
+    if (color.a == 1.0 ){
+    if (color.rgb != vec3(0.0)){
+            color *= modulate;
+        }
+    }
+    COLOR = color;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/modulate = Color( 0.705882, 0.682353, 0.133333, 1 )

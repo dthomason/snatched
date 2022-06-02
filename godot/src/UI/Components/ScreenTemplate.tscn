@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/theme/fonts/default_font_italics.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/theme/davesTheme.theme" type="Theme" id=2]
+[ext_resource path="res://src/UI/loginOrCreate.gd" type="Script" id=3]
+[ext_resource path="res://assets/theme/fonts/input_default.tres" type="Theme" id=4]
+[ext_resource path="res://assets/theme/fonts/montserrat/Montserrat-Bold.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 54
+extra_spacing_top = 4
+extra_spacing_bottom = 4
+extra_spacing_char = 4
+extra_spacing_space = 2
+font_data = ExtResource( 5 )
+
+[node name="ScreenPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 296.0
+margin_bottom = -184.0
+size_flags_horizontal = 10
+size_flags_vertical = 10
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 520.0 ],
+"_edit_vertical_guides_": [ 0.0, 1920.0 ]
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 0.996
+anchor_bottom = 1.32
+margin_right = 3.65991
+margin_bottom = -6.10352e-05
+theme = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -408.0
+margin_top = -301.0
+margin_right = 408.0
+margin_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 600, 200 )
+rect_pivot_offset = Vector2( -6, -6 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource( 2 )
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 816.0
+margin_bottom = 197.0
+
+[node name="guide" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_right = 816.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 400, 100 )
+rect_pivot_offset = Vector2( 960, 11 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Enter a Username"
+align = 1
+valign = 2
+percent_visible = -0.0714286
+
+[node name="UsernameText" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
+margin_left = 108.0
+margin_top = 117.0
+margin_right = 708.0
+margin_bottom = 197.0
+rect_min_size = Vector2( 600, 80 )
+rect_pivot_offset = Vector2( 291, 43 )
+mouse_filter = 1
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource( 4 )
+align = 1
+max_length = 200
+placeholder_text = "Nickname"
+caret_blink = true
+
+[node name="menuList" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 214.0
+margin_right = 816.0
+margin_bottom = 399.0
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 7
+size_flags_vertical = 7
+alignment = 1
+
+[node name="home" type="Button" parent="VBoxContainer/menuList"]
+margin_top = 42.0
+margin_right = 400.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 400, 100 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Private"
+
+[node name="online" type="Button" parent="VBoxContainer/menuList"]
+margin_left = 416.0
+margin_top = 42.0
+margin_right = 816.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 400, 100 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Public"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_left = 8.0
+margin_top = 416.0
+margin_right = 808.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 800, 100 )
+size_flags_horizontal = 6
+size_flags_vertical = 2
+text = "placeholder text"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="text_entered" from="VBoxContainer/VBoxContainer/UsernameText" to="." method="_on_UsernameText_text_entered"]
+[connection signal="button_down" from="VBoxContainer/menuList/home" to="." method="_on_home_button_down"]
+[connection signal="button_down" from="VBoxContainer/menuList/online" to="." method="_on_online_button_down"]

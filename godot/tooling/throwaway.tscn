@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/theme/icons/muted.png" type="Texture" id=1]
+[ext_resource path="res://assets/theme/icons/sound.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+margin_right = 152.0
+margin_bottom = 80.0
+custom_icons/off = ExtResource( 2 )
+custom_icons/on = ExtResource( 1 )

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/shaders/black_white_rect.tres" type="Material" id=1]
+[ext_resource path="res://assets/characters/berenstein/animations/idle/TED_idle_0.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 modulate : hint_color = vec4(1.0);
+
+
+void fragment(){
+    vec4 color = texture(TEXTURE,UV);
+//105, 109
+    if (color.rgb == vec3(142.0 + 105.0 + 109.0) / 3.0) {
+    color = modulate;
+    }
+    COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/modulate = Color( 0.705882, 0.682353, 0.133333, 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TedIdle0" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 275, 766 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+margin_left = 328.0
+margin_top = 674.0
+margin_right = 499.0
+margin_bottom = 862.0

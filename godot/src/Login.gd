@@ -34,7 +34,7 @@ func _on_Login_button_down():
 	var password = $PasswordText.text.strip_edges()
 	var email = $EmailText.text.strip_edges()
 	
-	var session = yield(Online.nakama_client.authenticate_email_async(email, password, null, false), "completed")
+	var session = yield(Online.nakama_client.authenticate_email_async(email, password, null, true), "completed")
 	if session.is_exception():
 		print(session.get_exception().message)
 	Online.nakama_session = session

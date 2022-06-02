@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/TileMaps/museum_sheet.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Characters/sawbone/sawbone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Characters/runner/runner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Characters/seeker/seeker.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 102.083
@@ -18,6 +24,10 @@ tile_data = PoolIntArray( 0, 0, 0, 12, 0, 0, 24, 0, 0, 36, 0, 0, 786432, 0, 0, 7
 
 [node name="runner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1450, 1218 )
+
+[node name="Seeker" parent="runner" instance=ExtResource( 4 )]
+material = SubResource( 3 )
+position = Vector2( -194, -44 )
 
 [node name="sawbone" parent="." groups=["hurt_player"] instance=ExtResource( 2 )]
 position = Vector2( 493, 1051 )
